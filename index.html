@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birder's Life List</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="bg-image"
+      style="
+        background-image: url('images/Untitled\ design.png');
+        height: 100vh;
+      "
+    >
+      <div class="container bg-body-secondary py-3">
+        <h1 class="display-1 text-center">Birder's Life List</h1>
+        <section class="card">
+          <div class="card-body">
+            <form>
+              <div class="row align-items-end">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="birdInput" class="form-label"
+                      >Type of Bird</label
+                    >
+                    <input type="text" class="form-control" id="birdInput" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="observationDate">Date Observed</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="observationDate"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-end">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="details" class="form-label"
+                      >Location and Details</label
+                    >
+                    <input type="text" class="form-control" id="details" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <button
+                    type="submit"
+                    id="submit"
+                    class="btn btn-info form-control"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="card my-3">
+          <table id="list" class="table table-info table-striped my-1">
+            <thead>
+              <tr>
+                <th>Bird</th>
+                <th>Date</th>
+                <th>Location and Details</th>
+              </tr>
+            </thead>
+            <tbody id="listBody"></tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+
+    <script src="lifelist.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+  <footer class="bg-info text-center p-2">RKVanHorn 2023</footer>
+</html>
