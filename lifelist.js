@@ -2,6 +2,7 @@
 //from the todoapp on the weekly video would differ. They both do the same thing,
 //but the 2nd seems cleaner and more concise.
 
+/*necessary for both versions*/
 const table = document.querySelector("#listBody");
 
 // document.querySelector("#submit").addEventListener("click", (e) => {
@@ -24,12 +25,20 @@ const table = document.querySelector("#listBody");
 
 document.querySelector("#submit").addEventListener("click", (e) => {
   e.preventDefault();
-  let row = table.insertRow(0);
-  row.insertCell(0).innerHTML = document.querySelector("#birdInput").value;
-  row.insertCell(1).innerHTML =
-    document.querySelector("#observationDate").value;
-  row.insertCell(2).innerHTML = document.querySelector("#details").value;
-  document.querySelector("#birdInput").value = "";
-  document.querySelector("#observationDate").value = "";
-  document.querySelector("#details").value = "";
+  if (
+    document.querySelector("#birdInput").value == "" ||
+    document.querySelector("#observationDate").value == "" ||
+    document.querySelector("#details").value == ""
+  ) {
+    alert("Please enter all required data");
+  } else {
+    let row = table.insertRow(0);
+    row.insertCell(0).innerHTML = document.querySelector("#birdInput").value;
+    row.insertCell(1).innerHTML =
+      document.querySelector("#observationDate").value;
+    row.insertCell(2).innerHTML = document.querySelector("#details").value;
+    document.querySelector("#birdInput").value = "";
+    document.querySelector("#observationDate").value = "";
+    document.querySelector("#details").value = "";
+  }
 });
